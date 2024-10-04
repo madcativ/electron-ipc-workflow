@@ -1,7 +1,7 @@
 import { contextBridge } from "electron"
-import IIPCAPI from "./interfaces/IIPCAPI"
-import IIPCHandler from "./interfaces/IIPCHandler"
-import IIPCInvoker from "./interfaces/IIPCInvoker"
+import IIPCAPI from "../domain/interfaces/IIPCAPI"
+import IIPCHandler from "../domain/interfaces/IIPCHandler"
+import IIPCInvoker from "../domain/interfaces/IIPCInvoker"
 
 export default class IPCAPI implements IIPCAPI{
     name : string

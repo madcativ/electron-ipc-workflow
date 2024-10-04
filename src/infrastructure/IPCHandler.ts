@@ -1,5 +1,5 @@
 import { ipcMain } from "electron"
-import IIPCHandler from "./interfaces/IIPCHandler"
+import IIPCHandler from "../domain/interfaces/IIPCHandler"
 
 export default class IPCHandler implements IIPCHandler{
     channel : string

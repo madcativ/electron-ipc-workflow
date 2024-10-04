@@ -1,4 +1,5 @@
-import IIPCInvoker from "./interfaces/IIPCInvoker"
+import { ipcRenderer } from "electron"
+import IIPCInvoker from "../domain/interfaces/IIPCInvoker"
 
 export default class IPCInvoker implements IIPCInvoker{
     channel : string
@@ -9,7 +10,9 @@ export default class IPCInvoker implements IIPCInvoker{
         this.actionName = actionName
     }
 
-    Action() : (...args: any[]) => any{
-        return () => {}
+    Action() : (...args : any[]) => any{
+        return (...args : any[]) => {
+            return ipcRenderer.invoke(this.channel, ...args)
+        }
     }
 }
